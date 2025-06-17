@@ -121,9 +121,9 @@ http://localhost:8080/students/
 
 ---
 
-## 📌 Screenshots
+## 📌 Working Model YT Link
 
-*(You can add screenshots here of your app and database)*
+[![Watch the demo](https://img.youtube.com/vi/AlpD1JL8sf0/0.jpg)](https://youtu.be/AlpD1JL8sf0?si=QyN4YbOYuGXVgLHk)
 
 ---
 
