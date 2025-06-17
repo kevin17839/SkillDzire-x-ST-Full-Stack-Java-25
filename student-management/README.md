@@ -123,7 +123,7 @@ http://localhost:8080/students/
 
 ## 📌 Working Model YT Link
 
-[![Watch the demo](https://img.youtube.com/vi/AlpD1JL8sf0/0.jpg)](https://youtu.be/AlpD1JL8sf0?si=QyN4YbOYuGXVgLHk)
+👉 [Click here to watch the Working Model Demo](https://youtu.be/AlpD1JL8sf0?si=QyN4YbOYuGXVgLHk)
 
 ---
 
