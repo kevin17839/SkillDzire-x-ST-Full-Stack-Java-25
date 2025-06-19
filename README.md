@@ -106,7 +106,7 @@ INSERT INTO students (name, email, course, age) VALUES
 
 ```bash
 # Navigate to project folder
-cd student-management
+cd STUDENT-MANAGEMENT
 
 # Build the project
 mvn clean install
@@ -123,14 +123,6 @@ http://localhost:8080/students/
 
 ---
 
-### 🧾 Sample Output
-
-- ✅ Displays student list in table
-- ✏️ Option to add/delete students
-- 📁 Data pulled live from MySQL
-
----
-
 ### 🔗 Links
 
 - 📹 [Project Demo on YouTube](https://youtu.be/AlpD1JL8sf0?si=3fQ4LS5fiu6uL4OH)
@@ -138,39 +130,96 @@ http://localhost:8080/students/
 
 ---
 
-## 📅 Internship Timeline Highlights
+## 📁 Project 2: Authentication System using JWT (Spring Boot)
 
-This project is part of a **multi-week Java internship program** that covered:
+### 📌 Project Description
 
-| Date         | Topic                                           |
-|--------------|--------------------------------------------------|
-| 05–10 May    | Java OOPs (Encapsulation, Inheritance, Polymorphism) |
-| 14–21 May    | REST APIs, DB Integration, React Frontend         |
-| 22–27 May    | Authentication System + React Dashboard           |
-| 27–31 May    | Bookstore App with Cart & Payment Integration     |
-| 03–07 Jun    | Job Portal + Recruiter Role Management            |
-| 10–13 Jun    | Microservices + Docker + REST Gateway             |
+This project implements a secure **Authentication System** using **Spring Boot** and **JWT (JSON Web Tokens)**.  
+It includes APIs for user registration and login and returns a signed JWT token to be used in subsequent API calls.
 
-> 🧪 Multiple assessments and hands-on modules were conducted throughout the training.
+> ✅ Developed as part of **Module: Build Auth System with JWT (Register/Login/Logout)** during the Full Stack Java Internship.
 
 ---
 
-## 🔮 What’s Next?
+### 🧱 Tech Stack
 
-- 🔜 Additional Projects will be added here soon  
-- 🧠 Planning to expand this repo into a **multi-project showcase**, with microservices, JWT auth systems, and more React-integrated apps
+| Component   | Technology                              |
+|------------|------------------------------------------|
+| 🧠 Backend     | Java, Spring Boot, Spring Security        |
+| 🔐 Auth       | JWT (JSON Web Tokens)                    |
+| 📄 API Format | JSON (RESTful API)                       |
+| 🧰 Build      | Maven                                    |
+| 💾 Database   | MySQL (via XAMPP)                        |
+| 🔬 Testing    | Postman                                  |
+
+---
+
+### 📂 Project Structure
+
+```
+PROJECT-2-AUTH-SYSTEM-JWT/
+├── pom.xml
+├── README.md
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── com/authapp/
+│       │       ├── config/        # JWT and Security Configuration
+│       │       ├── controller/    # Auth Controller
+│       │       ├── dto/           # Request and Response DTOs
+│       │       ├── model/         # User Entity
+│       │       ├── repo/          # Spring Data JPA Repository
+│       │       └── service/       # UserService + JWT Service
+│       └── resources/
+│           └── application.properties
+```
+
+---
+
+### 🔐 API Endpoints
+
+- **POST** `/api/auth/register` – Register a new user  
+- **POST** `/api/auth/login` – Login and receive JWT token  
+- **GET** `/api/protected` – Example of a protected route (JWT required)
+
+---
+
+### 🧪 How to Run
+
+> 💡 Prerequisites: Java, Maven, XAMPP, Postman
+
+```bash
+# Navigate to the project folder
+cd PROJECT-2-AUTH-SYSTEM-JWT
+
+# Build and run the Spring Boot app
+mvn clean install
+mvn spring-boot:run
+```
+
+API will run at:
+
+```
+http://localhost:8080/
+```
+
+Use **Postman** to test endpoints.
+
+---
+
+### 🔗 Links
+
+- 💻 [View Source on GitHub](https://github.com/udaycodespace/SkillDzire-x-ST-Full-Stack-Java-25/tree/main/Project-2-Auth-System-JWT)
 
 ---
 
 ## 🏁 Conclusion
 
-This project serves as a **foundational demonstration** of my skills in:
+These projects reflect my internship journey through:
 
-- Spring MVC architecture  
-- Backend-DB integration with JDBC  
-- JSP and Servlet-based UI rendering  
-- CRUD operations with clean separation of concerns
+- Spring MVC and Spring Boot ecosystem  
+- MySQL backend integration  
+- Real-world authentication with JWT  
+- RESTful API development and testing with Postman
 
-> It's just the beginning — more complex full-stack builds are on the way!
-
----
+> Stay tuned for more projects and improvements in this repository!
