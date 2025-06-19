@@ -1,176 +1,163 @@
-# 👨‍💻 SkillDzire x ST – Full Stack Java Internship 2025
+# 🔐 Project 2: Authentication System with JWT
 
-Welcome to my repository for the **SkillDzire Technologies x ST Full Stack Java Internship (May-June 2025)**.  
-This repository serves as a portfolio of my work throughout the internship — from hands-on backend APIs to full-stack projects with modern Java tech.
+> Developed as part of SkillDzire’s Full Stack Java Internship Program – May 2025 Batch
 
-> 🎓 This internship is part of my Summer Training from **G. Pulla Reddy Engineering College**, Department of Computer Science and Engineering.  
-> I am currently a final-year undergraduate with a strong interest in backend development and Java ecosystems.
+## 📌 Project Overview
 
----
+This project is a secure **Authentication System** built using **Spring Boot** and **JWT (JSON Web Token)**. It handles user registration and login with role-based access control. After a successful login, a JWT is issued, which is used for securing future API requests.
 
-## 🧑‍🎓 Intern Details
-
-- **Name:** Somapuram Uday  
-- **Roll No:** 229X1A2856  
-- **Branch:** Computer Science and Technology  
-- **Department:** Computer Science and Engineering  
-- **Organization:** SkillDzire Technologies Pvt. Ltd.  
-- **Internship Title:** Full Stack Java Training  
-- **Batch:** May 2025
+> 🔧 This is part of the module: **“Build Auth System with JWT”** covered during the internship.
 
 ---
 
-## 📁 Project 1: Student Management System (Spring MVC + MySQL)
+## 🧱 Tech Stack
 
-### 📌 Project Description
-
-This project is a **Student Management System** built using the **Spring MVC** framework, implementing the **Model-View-Controller** design pattern.  
-It performs core CRUD operations — listing, adding, and deleting student records from a MySQL database.
-
-> ✅ Developed as part of **Module: Design Student Schema & Backend APIs (CRUD)** during the Full Stack Java Internship.
-
----
-
-### 🧱 Tech Stack
-
-| Layer     | Technology                              |
-|-----------|------------------------------------------|
-| 🧠 Backend   | Java, Spring MVC, JdbcTemplate           |
-| 🎨 Frontend | JSP (Java Server Pages), HTML, CSS       |
-| 🧰 Build    | Maven                                    |
-| 💾 Database | MySQL (XAMPP)                            |
-| 🌐 Server   | Jetty (embedded via Maven)               |
+| Layer       | Technology                            |
+|-------------|----------------------------------------|
+| 🧠 Backend     | Java, Spring Boot, Spring Security     |
+| 🔐 Auth        | JWT (JSON Web Token)                  |
+| 📦 Build Tool | Maven                                 |
+| 🗃️ Database    | MySQL                                 |
+| 📫 API Test    | Postman                               |
 
 ---
 
-### 📂 Project Structure
+## 📂 Folder Structure
 
 ```
-student-management/
+PROJECT-2-AUTH-SYSTEM-JWT/
 ├── pom.xml
 ├── README.md
 ├── src/
 │   └── main/
 │       ├── java/
-│       │   └── com/studentapp/
-│       │       ├── config/        # DB & Spring Config
-│       │       ├── controller/    # MVC Controllers
-│       │       ├── dao/           # DAO + Implementation
-│       │       └── model/         # Student POJO
-│       └── webapp/
-│           └── WEB-INF/
-│               ├── views/         # JSP Pages
-│               └── web.xml        # DispatcherServlet config
+│       │   └── com/example/jwtauth/
+│       │       ├── config/          # JWT Security Config
+│       │       ├── controller/      # Auth APIs (Login/Register)
+│       │       ├── model/           # User entity + DTOs
+│       │       ├── repository/      # UserRepository (JPA)
+│       │       ├── service/         # UserDetailsService + JWT Utils
+│       │       └── JwtAuthApplication.java
+│       └── resources/
+│           ├── application.properties
+│           └── data.sql
 ```
 
 ---
 
-### ⚙️ Features
+## 🔐 Features
 
-- 🔍 View student list  
-- ➕ Add a new student  
-- ❌ Delete student entries  
-- ✅ Backend via Spring JdbcTemplate  
-- 🧩 Clean MVC separation  
-- ⚡ Deployed on embedded Jetty server for fast local testing
-
----
-
-### 🧠 Database Setup
-
-Ensure **MySQL is running via XAMPP**, then:
-
-```sql
-CREATE DATABASE student_management;
-
-USE student_management;
-
-CREATE TABLE students (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  name VARCHAR(100),
-  email VARCHAR(100),
-  course VARCHAR(50),
-  age INT
-);
-
-INSERT INTO students (name, email, course, age) VALUES
-('Uday', 'uday@example.com', 'CST', 21),
-('Bhavana', 'bhavana@example.com', 'AI', 22);
-```
+- 👤 Register a new user
+- 🔑 Login with username & password
+- 🪪 JWT token generation
+- ✅ Protect endpoints with token-based access
+- 🧩 Role-based access support (ADMIN / USER)
+- 📫 Test everything via Postman
 
 ---
 
-### 🧪 How to Run
+## 🧪 How to Run
 
-> 💡 Prerequisites: Java, Maven, XAMPP, Internet Browser
+> ✅ Prerequisites: Java 17+, Maven, MySQL, Postman
+
+### 1️⃣ Clone this repository and navigate to the folder
 
 ```bash
-# Navigate to project folder
-cd student-management
-
-# Build the project
-mvn clean install
-
-# Run Jetty server
-mvn jetty:run
+cd PROJECT-2-AUTH-SYSTEM-JWT
 ```
 
-Then open your browser at:
+### 2️⃣ Setup MySQL
+
+```sql
+CREATE DATABASE jwt_auth;
+
+USE jwt_auth;
+```
+
+> You can optionally use `data.sql` to preload users.
+
+### 3️⃣ Configure database in `application.properties`
 
 ```
-http://localhost:8080/students/
+spring.datasource.url=jdbc:mysql://localhost:3306/jwt_auth
+spring.datasource.username=root
+spring.datasource.password=your_password
+spring.jpa.hibernate.ddl-auto=update
+```
+
+### 4️⃣ Build and run the application
+
+```bash
+mvn spring-boot:run
+```
+
+Now your backend is running at:
+
+```
+http://localhost:8080/
 ```
 
 ---
 
-### 🧾 Sample Output
+## 🧪 Postman API Endpoints
 
-- ✅ Displays student list in table
-- ✏️ Option to add/delete students
-- 📁 Data pulled live from MySQL
+### 🔹 Register User
 
----
+**POST** `/api/auth/register`  
+```json
+{
+  "username": "uday",
+  "password": "pass123"
+}
+```
 
-### 🔗 Links
+### 🔹 Login
 
-- 📹 [Project Demo on YouTube](https://youtu.be/AlpD1JL8sf0?si=3fQ4LS5fiu6uL4OH)
-- 💻 [View Source on GitHub](https://github.com/udaycodespace/SkillDzire-x-ST-Full-Stack-Java-25/tree/main/student-management)
+**POST** `/api/auth/login`  
+```json
+{
+  "username": "uday",
+  "password": "pass123"
+}
+```
 
----
+Returns:
+```json
+{
+  "token": "eyJhbGciOiJIUzUxMiJ9..."
+}
+```
 
-## 📅 Internship Timeline Highlights
-
-This project is part of a **multi-week Java internship program** that covered:
-
-| Date         | Topic                                           |
-|--------------|--------------------------------------------------|
-| 05–10 May    | Java OOPs (Encapsulation, Inheritance, Polymorphism) |
-| 14–21 May    | REST APIs, DB Integration, React Frontend         |
-| 22–27 May    | Authentication System + React Dashboard           |
-| 27–31 May    | Bookstore App with Cart & Payment Integration     |
-| 03–07 Jun    | Job Portal + Recruiter Role Management            |
-| 10–13 Jun    | Microservices + Docker + REST Gateway             |
-
-> 🧪 Multiple assessments and hands-on modules were conducted throughout the training.
-
----
-
-## 🔮 What’s Next?
-
-- 🔜 Additional Projects will be added here soon  
-- 🧠 Planning to expand this repo into a **multi-project showcase**, with microservices, JWT auth systems, and more React-integrated apps
+Use the token in the `Authorization` header for secured endpoints:
+```
+Bearer <your-token>
+```
 
 ---
 
-## 🏁 Conclusion
+## ✅ Sample Output
 
-This project serves as a **foundational demonstration** of my skills in:
-
-- Spring MVC architecture  
-- Backend-DB integration with JDBC  
-- JSP and Servlet-based UI rendering  
-- CRUD operations with clean separation of concerns
-
-> It's just the beginning — more complex full-stack builds are on the way!
+- 200 OK with JWT token
+- 403 Forbidden if unauthorized
+- Register/login flows tested via Postman
 
 ---
+
+## 🔗 Links
+
+- 📹 [YouTube Channel (Demo)](https://www.youtube.com/@udaycodespace)
+
+---
+
+## 🧾 Final Notes
+
+This project showcases:
+
+- Real-world authentication flow in Spring Boot
+- Token-based security implementation
+- REST API practices with secure role-based routing
+
+> A great foundation for securing full-stack apps and integrating login in frontend frameworks (like React).
+
+---
+
