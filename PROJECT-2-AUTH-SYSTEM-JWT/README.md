@@ -1,163 +1,77 @@
-# 🔐 Project 2: Authentication System with JWT
-
-> Developed as part of SkillDzire’s Full Stack Java Internship Program – May 2025 Batch
-
-## 📌 Project Overview
-
-This project is a secure **Authentication System** built using **Spring Boot** and **JWT (JSON Web Token)**. It handles user registration and login with role-based access control. After a successful login, a JWT is issued, which is used for securing future API requests.
-
-> 🔧 This is part of the module: **“Build Auth System with JWT”** covered during the internship.
+# 🔐 Authentication System with JWT  
+**(Part of Student Management System Project)**  
+📦 SkillDzire Full Stack Java Internship – May 2025  
+👨‍🎓 Developed by: Somapuram Uday | Roll No: 229X1A2856  
+🎓 Department of Computer Science and Engineering  
+🏫 G Pulla Reddy Engineering College
 
 ---
 
-## 🧱 Tech Stack
+## ⚠️ Important Note
 
-| Layer       | Technology                            |
-|-------------|----------------------------------------|
-| 🧠 Backend     | Java, Spring Boot, Spring Security     |
-| 🔐 Auth        | JWT (JSON Web Token)                  |
-| 📦 Build Tool | Maven                                 |
-| 🗃️ Database    | MySQL                                 |
-| 📫 API Test    | Postman                               |
+This is **not a standalone project**.  
+This repository contains the **Authentication Module using JWT** that was built as a **sub-component** of a larger Full Stack Web Application – the **Student Management System** – developed during my Full Stack Java Internship at **SkillDzire Technologies Pvt. Ltd.**
+
+👉 To view the full project (with frontend + backend + database integration), please check:  
+🔗 [Student Management System – Full Project Repo](https://github.com/udaycodespace/SkillDzire-x-ST-Full-Stack-Java-25)
 
 ---
 
-## 📂 Folder Structure
+## 🛠️ Features Implemented
 
-```
-PROJECT-2-AUTH-SYSTEM-JWT/
-├── pom.xml
-├── README.md
-├── src/
-│   └── main/
-│       ├── java/
-│       │   └── com/example/jwtauth/
-│       │       ├── config/          # JWT Security Config
-│       │       ├── controller/      # Auth APIs (Login/Register)
-│       │       ├── model/           # User entity + DTOs
-│       │       ├── repository/      # UserRepository (JPA)
-│       │       ├── service/         # UserDetailsService + JWT Utils
-│       │       └── JwtAuthApplication.java
-│       └── resources/
-│           ├── application.properties
-│           └── data.sql
-```
+This module includes:
+- 🔑 User Authentication with **Spring Boot**
+- 🪪 **JWT Token** generation and validation
+- 👥 **Role-based Access Control** (Admin / Student)
+- 🚫 Secured endpoints for protected resources
+- 🔁 Login & registration APIs
+- ❌ Access denied handling and token expiry
 
 ---
 
-## 🔐 Features
+## 📂 Tech Stack
 
-- 👤 Register a new user
-- 🔑 Login with username & password
-- 🪪 JWT token generation
-- ✅ Protect endpoints with token-based access
-- 🧩 Role-based access support (ADMIN / USER)
-- 📫 Test everything via Postman
-
----
-
-## 🧪 How to Run
-
-> ✅ Prerequisites: Java 17+, Maven, MySQL, Postman
-
-### 1️⃣ Clone this repository and navigate to the folder
-
-```bash
-cd PROJECT-2-AUTH-SYSTEM-JWT
-```
-
-### 2️⃣ Setup MySQL
-
-```sql
-CREATE DATABASE jwt_auth;
-
-USE jwt_auth;
-```
-
-> You can optionally use `data.sql` to preload users.
-
-### 3️⃣ Configure database in `application.properties`
-
-```
-spring.datasource.url=jdbc:mysql://localhost:3306/jwt_auth
-spring.datasource.username=root
-spring.datasource.password=your_password
-spring.jpa.hibernate.ddl-auto=update
-```
-
-### 4️⃣ Build and run the application
-
-```bash
-mvn spring-boot:run
-```
-
-Now your backend is running at:
-
-```
-http://localhost:8080/
-```
+- **Java 17**
+- **Spring Boot**
+- **Spring Security**
+- **JWT (Java Web Tokens)**
+- **Maven**
+- **MySQL**
 
 ---
 
-## 🧪 Postman API Endpoints
+## 📌 How It Fits in the Main Project
 
-### 🔹 Register User
-
-**POST** `/api/auth/register`  
-```json
-{
-  "username": "uday",
-  "password": "pass123"
-}
-```
-
-### 🔹 Login
-
-**POST** `/api/auth/login`  
-```json
-{
-  "username": "uday",
-  "password": "pass123"
-}
-```
-
-Returns:
-```json
-{
-  "token": "eyJhbGciOiJIUzUxMiJ9..."
-}
-```
-
-Use the token in the `Authorization` header for secured endpoints:
-```
-Bearer <your-token>
-```
+This module is **integrated into the backend** of the `Student Management System`, where:
+- Users log in using email & password
+- JWT tokens are used for session management
+- Access to API endpoints is protected based on user roles
+- Admins and students have different route permissions
 
 ---
 
-## ✅ Sample Output
+## 🧑‍🏫 Internship Context
 
-- 200 OK with JWT token
-- 403 Forbidden if unauthorized
-- Register/login flows tested via Postman
-
----
-
-## 🔗 Links
-
-- 📹 [YouTube Channel (Demo)](https://www.youtube.com/@udaycodespace)
+This was developed as part of:
+> 🔸 **Full Stack Java Internship @ SkillDzire Technologies Pvt. Ltd.**  
+> 🔸 Duration: May – June 2025  
+> 🔸 Mentor: Mr. Abhishek Garg (Instructor)  
+> 🔸 Guided by: Mr. Srikanth Muppala (Founder, SkillDzire)
 
 ---
 
-## 🧾 Final Notes
+## 🤝 Acknowledgements
 
-This project showcases:
+Thanks to **SkillDzire Technologies Pvt. Ltd.** for the opportunity and structured training that enabled me to build and understand secure authentication systems using Spring Boot and JWT.
 
-- Real-world authentication flow in Spring Boot
-- Token-based security implementation
-- REST API practices with secure role-based routing
+---
 
-> A great foundation for securing full-stack apps and integrating login in frontend frameworks (like React).
+## 📧 Contact
+
+**Somapuram Uday**  
+Email: [YourEmail@example.com]  
+LinkedIn: [linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)  
+GitHub: [github.com/udaycodespace](https://github.com/udaycodespace)
 
 ---
 
